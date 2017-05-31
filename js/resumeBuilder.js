@@ -43,7 +43,37 @@ var jobs = {
             "Title": "Economic & Technology news Correspondent in Caucasus",
             "Location": "Tbilisi, Georgia",
             "Dates of Employment": "August 1997-December 2009",
-            "Main Responsibilities": "Wrote stories about technology and economic events in Caucasus. Reported about government’s economic activities. •	Accompanied Georgian highest level officials during their visits abroad several times (Including visit to White House and meeting with former president of US George W. Bush). Regularly wrote economic analyses of the situation in the region."
-},
+            "Main Responsibilities": "Wrote stories about technology and economic events in Caucasus. Reported about government’s economic activities. Accompanied Georgian highest level officials during their visits abroad several times (Including visit to White House and meeting with former president of US George W. Bush). Regularly wrote economic analyses of the situation in the region."
+}
     ]
+}
+
+var projects = {
+    "some projects": [
+        {
+            "Title": " ",
+            "Dates": " ",
+            "Description": "",
+            "Image": [] /*Here we will have array of links to project images*/
+
+}]
+}
+
+var bio = {
+    "Nikoloz Mchedlishvili": [
+        {
+            "Role": " ",
+            "Welcome Message": " ",
+            "Contacts": {
+                "Mobile": "",
+                "email": "",
+                "gitHub": "",
+                "twitter": "",
+                "Location": ""
+
+            },
+
+            "skills": []
+
+}]
 }
