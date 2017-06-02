@@ -49,20 +49,30 @@ var work = {
 }
 
 var projects = {
-    "some projects": [
+    "projects": [
         {
-            "Title": " ",
-            "Dates": " ",
-            "Description": "",
-            "Image": [] /*Here we will have array of links to project images*/
+            "title": "Personal Portfolio web page",
+            "dates": "May 2017",
+            "description": "This is my web page",
+            "images": ["images/webpage.png"]
 
-}]
+},
+
+        {
+            "title": "Animal Card",
+            "dates": "May 2017",
+            "description": "This is my first project",
+            "images": ["images/webpage.png"]
+
 }
+]
+}
+
 
 var bio = {
     "name": "Nikoloz Mchedlishvili",
-    "Role": " ",
-    "Welcome Message": " ",
+    "Role": "Web Developer ",
+    "Welcome Message": "I'm a web developer with Nanodegree from Udacity.  ",
     "Contacts": {
         "Mobile": "",
         "email": "",
@@ -86,6 +96,51 @@ if (bio.skills.length > 0) {
     $("#skills").append(formattedSkill);
     formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
     $("#skills").append(formattedSkill);
-
-
 }
+
+function displayWork() {
+    /* I need to try to change this*/
+
+    for (job in work.jobs) {
+
+        $("#workExperience").append(HTMLworkStart);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var formattedEmployerTitle = formattedEmployer + formattedTitle;
+        $(".work-entry:last").append(formattedEmployerTitle);
+
+        var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        $(".work-entry:last").append(formattedDescription);
+    }
+}
+displayWork();
+
+for (project in projects.projects) {
+    $("#projects").append(HTMLprojectStart);
+
+    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedTitle);
+    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedDates);
+    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedDescription);
+    if (projects.projects[project].images.length > 0) {
+        for (image in projects.projects[project].images) {
+            var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+            $(".project-entry:last").append(formattedImage);
+        }
+    }
+}
+
+$("#mapDiv").append(googleMap);
+
+
+
+
+
+
+$(document).click(function (loc) {
+    var x = loc.pageX;
+    var y = loc.pageY;
+    logClicks(x, y);
+});
