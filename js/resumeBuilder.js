@@ -89,43 +89,112 @@ var bio = {
     "display": "function"
 }
 
-if (bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-    $("#skills").append(formattedSkill);
+var education = {
+
+    "schools": [
+
+        {
+            "name": "Grenoble Business School (France)",
+            "location": "Tbilisi Campus, Georgia",
+            "degree": "MBA",
+            "majors": ["Global Management"],
+            "dates": "2008-2011"
+        },
+
+        {
+            "name": "Tbilisi State University",
+            "location": "Tbilsi, Georgia",
+            "degree": "Master of Science",
+            "majors": ["Theoretical Physics", "Solid State Physics"],
+            "dates": "1986-1991"
+        }
+        ],
+    "onlineCourses": [
+        {
+            "title": "The Complete jQuery Course: From Beginner To Advanced",
+            "school": "udemy.com",
+            "dates": "May 2017",
+            "url": "https://www.udemy.com/certificate/UC-LU6C6UKG/"
+       },
+
+
+
+        {
+            "title": "Git Essential Training",
+            "school": "linkedin.com",
+            "dates": "May 2017",
+            "url": "https://www.linkedin.com/learning/git-essential-training"
+       },
+
+
+        {
+            "title": "HTML5.1x: HTML5 Part 1: HTML5 Coding Essentials and Best Practices",
+            "school": "edX.org",
+            "dates": "Dec 2016",
+            "url": "https://courses.edx.org/certificates/c35f1e6d3f674f2a8d2a5945205ae66c"
+       },
+
+        {
+            "title": "JavaScript Exam",
+            "school": "w3schools.com",
+            "dates": "Nov 2016",
+            "url": "http://www.refsnesdata.no/certification/w3certified.asp?email=mchedlish@yahoo.com"
+       },
+
+
+        {
+            "title": "HTML5.0x: HTML5 Introduction",
+            "school": "edX.org",
+            "dates": "Oct 2016",
+            "url": "https://courses.edx.org/certificates/d8d667c2387645f0a241bfc6cd34cb0c"
+       }
+
+
+   ],
+
+    "display": "function"
+
 }
 
-var formattedName = HTMLheaderName.replace("%data%", "Nikoloz Mchedlishvili");
-$("#header").prepend(formattedName);
-var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
-$("#header").prepend(formattedRole);
 
 
+bio.display = function () {
 
-$("#topContacts").append(HTMLcontactGeneric);
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(formattedMobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(formattedEmail);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.gitHub);
-$("#topContacts").append(formattedGithub);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-$("#topContacts").append(formattedTwitter);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedLocation);
-var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
-$("#topContacts").append(formattedPic);
-var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#topContacts").append(formattedMsg);
+    if (bio.skills.length > 0) {
+        $("#header").append(HTMLskillsStart);
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
+        $("#skills").append(formattedSkill);
+    }
+    var formattedName = HTMLheaderName.replace("%data%", "Nikoloz Mchedlishvili");
+    $("#header").prepend(formattedName);
+    var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
+    $("#header").prepend(formattedRole);
+    $("#topContacts").append(HTMLcontactGeneric);
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    $("#topContacts").append(formattedMobile);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    $("#topContacts").append(formattedEmail);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.gitHub);
+    $("#topContacts").append(formattedGithub);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    $("#topContacts").append(formattedTwitter);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    $("#topContacts").append(formattedLocation);
+    var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
+    $("#topContacts").append(formattedPic);
+    var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+    $("#topContacts").append(formattedMsg);
 
+}
+bio.display();
 
 
 
