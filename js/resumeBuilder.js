@@ -181,15 +181,15 @@ education.display = function () {
 
     $(".education-entry").append(HTMLonlineClasses);
 
-    for (var i = 0; i <= education.onlineCourses.length - 1; i++) {
-        var fortmattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
+    for (var k = 0; k <= education.onlineCourses.length - 1; k++) {
+        var fortmattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[k].title);
         $(".education-entry:last").append(fortmattedonlineTitle);
-        var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+        var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[k].school);
         $(".education-entry:last").append(formattedonlineSchool);
-        var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+        var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[k].dates);
         $(".education-entry:last").append(formattedonlineDates);
         var formattedonlineURL = HTMLonlineURL.replace("%data%", "Click here to view certificate");
-        formattedonlineURL = formattedonlineURL.replace("#", education.onlineCourses[i].url);
+        formattedonlineURL = formattedonlineURL.replace("#", education.onlineCourses[k].url);
         $(".education-entry:last").append(formattedonlineURL);
 
     }
