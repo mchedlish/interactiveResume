@@ -64,7 +64,7 @@ var projects = {
             "title": "Animal Card",
             "dates": "May 2017",
             "description": "This is my first project",
-            "images": ["images/webpage.png"]
+            "images": ["images/dog.png"]
 
 }
 ],
@@ -180,7 +180,8 @@ education.display = function () {
         $(".education-entry:last").append(formattedonlineSchool);
         var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
         $(".education-entry:last").append(formattedonlineDates);
-        var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
+        var formattedonlineURL = HTMLonlineURL.replace("%data%", "Click here to view certificate");
+        formattedonlineURL = formattedonlineURL.replace("#", education.onlineCourses[i].url);
         $(".education-entry:last").append(formattedonlineURL);
 
     }
@@ -207,7 +208,7 @@ bio.display = function () {
     $("#header").prepend(formattedName);
     var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
     $("#header").prepend(formattedRole);
-    $("#topContacts").append(HTMLcontactGeneric);
+    //    $("#topContacts").append(HTMLcontactGeneric);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#topContacts").append(formattedMobile);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
@@ -219,9 +220,9 @@ bio.display = function () {
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#topContacts").append(formattedLocation);
     var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
-    $("#topContacts").append(formattedPic);
+    $("#header").prepend(formattedPic);
     var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#topContacts").append(formattedMsg);
+    $("#header").append(formattedMsg);
 
 }
 bio.display();
@@ -245,8 +246,6 @@ work.display = function () {
 }
 work.display();
 
-
-//function displayProjects()
 projects.display = function () {
     for (var i = 0; i <= projects.projects.length - 1; i++) {
         $("#projects").append(HTMLprojectStart);
