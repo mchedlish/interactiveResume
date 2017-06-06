@@ -48,7 +48,7 @@ var work = {
     ],
 
     "display": "function"
-}
+};
 
 var projects = {
     "projects": [
@@ -69,7 +69,7 @@ var projects = {
 }
 ],
     "display": "function"
-}
+};
 
 
 var bio = {
@@ -87,7 +87,7 @@ var bio = {
     "skills": ["HTML 5", "CSS 3", "JavaScript", "jQuery", "JSON"],
     "biopic": "images/nik.jpg",
     "display": "function"
-}
+};
 
 var education = {
 
@@ -153,7 +153,7 @@ var education = {
 
     "display": "function"
 
-}
+};
 
 function inName(name) {
     name = name.trim().split(" ");
@@ -193,7 +193,7 @@ education.display = function () {
         $(".education-entry:last").append(formattedonlineURL);
 
     }
-}
+};
 education.display();
 
 
@@ -232,7 +232,7 @@ bio.display = function () {
     var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedMsg);
 
-}
+};
 bio.display();
 
 work.display = function () {
@@ -247,7 +247,7 @@ work.display = function () {
         var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
         $(".work-entry:last").append(formattedDescription);
     }
-}
+};
 work.display();
 
 projects.display = function () {
@@ -270,7 +270,7 @@ projects.display = function () {
             }
         }
     }
-}
+};
 projects.display();
 
 $("#mapDiv").append(googleMap);
