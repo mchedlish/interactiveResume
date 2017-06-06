@@ -149,12 +149,20 @@ var education = {
             "url": "https://courses.edx.org/certificates/d8d667c2387645f0a241bfc6cd34cb0c"
        }
 
-
    ],
 
     "display": "function"
 
 }
+
+function inName(name) {
+    name = name.trim().split(" ");
+    name[1] = name[1].toUpperCase();
+    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+    return name[0] + " " + name[1];
+}
+
+$("#main").append(internationalizeButton);
 
 education.display = function () {
 
@@ -227,10 +235,6 @@ bio.display = function () {
 }
 bio.display();
 
-
-
-
-
 work.display = function () {
     for (var i = 0; i <= work.jobs.length - 1; i++) {
 
@@ -268,9 +272,5 @@ projects.display = function () {
     }
 }
 projects.display();
-
-
-
-
 
 $("#mapDiv").append(googleMap);
